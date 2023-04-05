@@ -11,8 +11,8 @@ app.use(cors());
 const BASE_URL = 'https://app.orderdesk.me/api/v2';
 
 const headers = {
-  'ORDERDESK-STORE-ID': '52014',
-  'ORDERDESK-API-KEY': 'CFhKbab5LFWomrwpLJqC7DFLGR3Dz6TQfshPE6aBX8qQgn5qsZ',
+  'ORDERDESK-STORE-ID': '51994',
+  'ORDERDESK-API-KEY': 'h7DNSdVq56HXGLhqHEcsanb2pyphEKJ3gkvAyfXzFCXXffcUq7',
   'Content-Type': 'application/json',
 };
 
@@ -53,13 +53,13 @@ app.get('/orders', async (req, res) => {
 
 function logOrder(order) {
   console.log(`Order ID: ${order.id}`);
-  if (order.shipping.adress1) {
-    console.log(`Shipping Address: ${order.shipping.adress1}`);
+  if (order.shipping.address1) {
+    console.log(`Shipping Address: ${order.shipping.address1}`);
   } else {
     console.log('Shipping Address not found.');
   }
 }
 
 app.listen(PORT || process.env.PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server listening on port http://localhost:${PORT}/orders`);
 });
