@@ -53,7 +53,11 @@ app.get('/orders', async (req, res) => {
 
 function logOrder(order) {
   console.log(`Order ID: ${order.id}`);
-  console.log(`Shipping Address: ${order.shipping_address.name} ${order.shipping_address.line1}, ${order.shipping_address.city}, ${order.shipping_address.state} ${order.shipping_address.zip}`);
+  if (order.shipping.adress1) {
+    console.log(`Shipping Address: ${order.shipping.adress1}`);
+  } else {
+    console.log('Shipping Address not found.');
+  }
 }
 
 app.listen(PORT || process.env.PORT, () => {
